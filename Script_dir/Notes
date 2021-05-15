@@ -1,0 +1,80 @@
+# To workwell the procheck
+---------------------------
+1) Extract procheck.tar.gz
+2) type make to compile. It will generate anglen, secstr etc, the binaries
+3) promotif.scr is the main csh script which act as a pipeline to execure all the functions
+4) As it is a csh script and not the bash script we need to add .cshrc file
+5) Actually .cshrc file was not there. So creqate it
+
+Create .cshrc
+---------------
+1) Open terminal (bash mode)
+2) vi ~/.cshrc
+3) Type the content between two hash lines (###) in the file
+4) save the file Esc,:wq!
+5) Upon saving u will return to bash shell, so source ~/.cshrc will give error
+6) However to check all entered entries are correct or not, we can type "csh" so that we enter into csh shell
+7) In the csh shell, we can type "source ~/.cshrc", If no error, then we are fine
+8) Just see that "set path = ($path /bin)" is important bcoz when we ran the promotif.scr file we got the error saying cp, grep etc not found
+9) So to work these command, CP/grep we add the path variable
+
+##############################################################################################
+set path = ($path /bin)
+set    prodir =  /home/priyabrata/Bioinfo/procheck
+setenv prodir   '/home/priyabrata/Bioinfo/procheck'
+alias procheck      $prodir'/procheck.scr'
+alias procheck_comp $prodir'/procheck_comp.scr'
+alias procheck_nmr  $prodir'/procheck_nmr.scr'
+alias proplot       $prodir'/proplot.scr'
+alias proplot_comp  $prodir'/proplot_comp.scr'
+alias proplot_nmr   $prodir'/proplot_nmr.scr'
+alias aquapro       $prodir'/aquapro.scr'
+alias gfac2pdb      $prodir'/gfac2pdb.scr'
+alias viol2pdb      $prodir'/viol2pdb.scr'
+alias wirplot       $prodir'/wirplot.scr'
+
+# AQUA environment and aliases (for use with PROCHECK-NMR)
+# # --------------------------------------------------------
+# # Aliases are initialised by typing 'aqua'
+# #
+# if ( ! $?aquaroot )         setenv aquaroot   @@_aqua_program_directory_@@
+# if ( "`alias aqua`" == "" ) alias  aqua       'source $aquaroot/aqsetupi'
+#
+#
+##############################################################################################
+
+
+Edit the promotif.scr file
+--------------------------
+First line should be  #!/bin/csh
+It says to run this script using csh shell
+I dont know why automatic sourcing didnot work so 
+next line we put manually as source "/home/priyabrata/.cshrc";
+
+By doing this in our R code everything worked fine
+
+
+
+######################## HBPLUS ####################
+######################## HBPLUS ####################
+######################## HBPLUS ####################
+######################## HBPLUS ####################
+In the /home/priyabrata/Bioinfo/hbplus/exe folder there is hbplus.exe which works well if we give as hbpluspath
+But if we set hbpluspath to /home/priyabrata/Bioinfo/hbplus/hbplus/hbplus then it wont work
+
+########### Promotif #######
+Same as procheck,it tun as csh script
+So we added the motifdir env variable in .cshrc as
+
+# Promotif
+set motifdir=/home/priyabrata/Bioinfo/Promotif
+alias promotif $motifdir'/promotif.scr'
+alias promotif_multi $motifdir'/promotif_multi.scr'
+alias promotif_nmr=$motifdir'/promotif_nmr.scr'
+
+and in promotif.scr file we put
+next line we put manually as source "/home/priyabrata/.cshrc";
+
+
+
+

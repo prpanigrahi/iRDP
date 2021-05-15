@@ -1,0 +1,38 @@
+solved
+-------
+1) Manas: remove 2_1 from NetDet [solved]
+3) Manas: In NetDet, remove comma with <br> [solved]
+13) 1dki: deamidation error due to insertion code... [solved]
+14) pdb1klt.ent:deamidation error due to insertion code [solved]
+12) Insertion code checking for ip,ap... [solved]
+
+
+unsolved
+---------
+2) Manas: update secstr composition [unsolved]
+4) use dihed any refernece?? do we use ??
+5) Naccess curoff basis??
+6) Foldx dipole energy
+7) Manas : in the individual file for ion pairs table 1 rename ASA columns as Residue 1 and Residue 2
+8) Manas : in the individual file for aromatic pairs table 1 dihedral angle should be bet. 50-70 acc to burley and petsko classification and label should be deg not Ang
+9) Manas : in the individual file label Network Details as Network Pairs
+10) PP: upload features
+11) PP: check pattern/mutation textarea for any invalid input
+15) pdb1xj9.ent; error due to unusal file, trim.pdb gives error
+16) pdb1fnt.ent: error in pattern_...
+17) pdb2y9a.ent: promotif error
+18) pdb3c1p.ent: complete hetatom file Check for these kind of files: if(nrow(pdb$het) > nrow(pdb$atom)){next;}
+19) pdb1o19.entpdb1o1a.ent till 1o1g: takes long time...they are electron tomogram at 70Ang resol : use pdb.annotate to find the expt type and sort out the EM files
+
+20) In helixdipole:file:///programs/outdir/St65688_27Feb2014/HTML/HelixDipole/Hdipole_summary.html,
+in certain entries where no helix dipole present, all cells are "-", there in pdbid a hyperlink is created, it should not actually
+21)Pat:pdb3c1p.ent:Error in atom[, "elety"] : incorrect number of dimensions>Calls: trim.pdb:complete hetatom file
+22)Pat:pdb3mbs.ent:Error in atom[, "elety"] : incorrect number of dimensions>Calls: trim.pdb:complete hetatom file
+23)Pat:pdb4j70.ent:*** caught segfault *** > address (nil), cause 'unknown'Traceback:
+ 1: apply(sel.inds, 1, sum, na.rm = TRUE)
+ 2: parse.string(pdb, string, verbose, rm.insert)
+ 3: atom.select(pdb, chain = ch, elety = "CA", verbose = FALSE)
+ 4: patFind(pdb, ch, pat)
+aborting ...
+Segmentation fault (core dumped)
+
